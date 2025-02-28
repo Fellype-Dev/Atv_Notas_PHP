@@ -1,5 +1,4 @@
 <?php
-// Função para cadastrar um aluno
 function cadastrarAluno($nome, $nota) {
     if ($nota < 0 || $nota > 10) {
         echo "<p style='color:red;'>Nota inválida! A nota deve estar entre 0 e 10.</p>";
@@ -11,7 +10,6 @@ function cadastrarAluno($nome, $nota) {
     fclose($arquivo);
 }
 
-// Função para listar todos os alunos e suas notas
 function listarAlunos() {
     if (!file_exists("notas.txt")) {
         echo "<p>Nenhum aluno cadastrado.</p>";
@@ -27,7 +25,6 @@ function listarAlunos() {
     echo "</ul>";
 }
 
-// Função para calcular a média das notas
 function calcularMedia() {
     if (!file_exists("notas.txt")) {
         return 0;
@@ -46,7 +43,6 @@ function calcularMedia() {
     return $quantidade > 0 ? $total / $quantidade : 0;
 }
 
-// Função para excluir todas as notas
 function excluirTodasNotas() {
     if (file_exists("notas.txt")) {
         unlink("notas.txt");
@@ -56,7 +52,6 @@ function excluirTodasNotas() {
     }
 }
 
-// Função para editar a nota de um aluno específico
 function editarNota($nome, $novaNota) {
     if (!file_exists("notas.txt")) {
         echo "<p style='color:red;'>Nenhum aluno cadastrado.</p>";

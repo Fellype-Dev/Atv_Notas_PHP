@@ -7,19 +7,16 @@
 <body>
     <h1>Gerenciamento de Notas</h1>
 
-    <!-- Formulário para cadastrar alunos -->
     <form method="post" action="">
         Nome: <input type="text" name="nome" required><br>
         Nota: <input type="number" name="nota" step="0.1" min="0" max="10" required><br>
         <input type="submit" name="cadastrar" value="Cadastrar">
     </form>
 
-    <!-- Botão para excluir todas as notas -->
     <form method="post" action="">
         <input type="submit" name="excluir_todas" value="Excluir Todas as Notas">
     </form>
 
-    <!-- Lista de alunos e notas -->
     <h2>Lista de Alunos e Notas</h2>
     <?php
     include 'functions.php';
@@ -37,7 +34,6 @@
     listarAlunos();
     ?>
 
-    <!-- Cálculo da média -->
     <h2>Média das Notas</h2>
     <?php
     $media = calcularMedia();
